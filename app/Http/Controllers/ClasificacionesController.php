@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Clasificacion;
 use DataTables; 
-use Laracasts\Flash\Flash;
 
 use Illuminate\Http\Request;
 
@@ -54,10 +53,10 @@ class ClasificacionesController extends Controller
             "Nombre_Clasificacion"=>$Clasific["Nombre_Clasificacion"],
             "Estado"=>1
         ]);
-           Flash::success('Se ha creado la Clasificacion correctamente');
+        //    Flash::success('Se ha creado la Clasificacion correctamente');
            return redirect('/Clasificaciones');
        } catch (\Exception $e) {
-           Flash::error('Clasificacion no encontrada');
+        //    Flash::error('Clasificacion no encontrada');
            return redirect('/Clasificaciones/Create');
         //    ->with('success','creado correctamente');
 
@@ -70,7 +69,7 @@ class ClasificacionesController extends Controller
     {
         $Clasific=Clasificacion::find($id);
         if ($Clasific==null) {
-           Flash::error("Clasificacion no encontrada");
+        //    Flash::error("Clasificacion no encontrada");
            return redirect("/Clasificaciones");
         }
 
@@ -85,7 +84,7 @@ class ClasificacionesController extends Controller
 
         $clasificacion=Clasificacion::find($Clasific["id"]);
         if ($clasificacion==null) {
-           Flash::error("Clasificacion no exixte");
+        //    Flash::error("Clasificacion no exixte");
            return redirect("/Clasificaciones");
         }
         // return view("/Ingredientes/Edit",compact("Ingredient"));
@@ -97,11 +96,11 @@ class ClasificacionesController extends Controller
             
         ]);
 
-        Flash::success("Clasificacion actualizada correctamente");
+        // Flash::success("Clasificacion actualizada correctamente");
         
            return redirect('/Clasificaciones');
        } catch (\Exception $e) {
-        Flash::error($e);
+        // Flash::error($e);
            return redirect('/Clasificaciones');
        }
     }
@@ -112,15 +111,15 @@ class ClasificacionesController extends Controller
     {
         $Clasific=Clasificacion::find($id);
         if ($Clasific==null) {
-           Flash::error("Clasificacion no encontrada");
+        //    Flash::error("Clasificacion no encontrada");
            return redirect("/Clasificaciones");
         }
         try {
             $Clasific->update(["Estado"=>$estado]);
-            Flash::success("Se ha modificado el estado de la clasificacion");
+            // Flash::success("Se ha modificado el estado de la clasificacion");
             return redirect("/Clasificaciones");
         } catch (\Exception $e) {
-            Flash::success("No se ha modificado estado de la clasificacion");
+            // Flash::success("No se ha modificado estado de la clasificacion");
             return redirect("/Clasificaciones");
         }
     }

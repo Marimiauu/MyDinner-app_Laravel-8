@@ -62,7 +62,7 @@
                                                             </div>
                                                 </div>
                                                 <div class="m-3 display-block">
-                                                    <button class="btn custom-btn btn-block" type="submit">{{ __('Reset Password soy yo ') }}</button>
+                                                    <button class="btn custom-btn btn-block" type="submit">{{ __('Reset Password') }}</button>
                                                  
                                                 </div>
                                         </form>

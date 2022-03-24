@@ -16,18 +16,23 @@
                 <i class="fas fa-table me-1"></i>
                 <span> Clasification</span>
             </div>
-                @include('flash::message')
             <div class="card-body">
-                <table id="tbl_Clasification" class=" text-center table" style="width: 100%">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>State</th>
-                            <th>Edit</th> 
-                            <th>Shange State</th>
-                        </tr>
-                    </thead>
-                </table>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table  id="tbl_Clasification"  class="table table-bordered table-striped table-hover" cellpadding="0" >
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>State</th>
+                                        <th>Edit</th> 
+                                        <th>Shange State</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </div> 
     </div> 
@@ -38,12 +43,6 @@
 
 @section('JS')
 <script>
-
-// Swal.fire(
-//   'Good job!',
-//   'You clicked the button!',
-//   'success'
-// )
 
 $('#tbl_Clasification').DataTable({
         processing: true,

@@ -32,7 +32,6 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5 booking">
                                     <div class="card-header"><h3 class="text-center font-weight-dark my-4">Edit</h3></div>
                                     <div class="card-body ">
-                                    @include('flash::message')
                                    
                                     <div class="booking-form">
                                      
